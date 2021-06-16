@@ -4,7 +4,7 @@ public class Kotik {
 	private int hunger=10;
 	private int prettiness,weight;
 	private String name, meow;
-	private int objectC=0;
+	private static int objectNum=0;
 	
 	
 	//get and set
@@ -47,30 +47,19 @@ public class Kotik {
 	public void setMeow(String meow) {
 		this.meow = meow;
 	}
-
-	public int getObjectC() {
-		return objectC;
-	}
-
-	public void setObjectC(int objectC) {
-		this.objectC = objectC;
-	}
-
-	//Construct
-	public Kotik(int prettiness, int weight, String name, String meow) {
-		super();
-		this.prettiness = prettiness;
-		this.weight = weight;
-		this.name = name;
-		this.meow = meow;
-		objectC++;
-	}
 	
-	
+	public static int getObjectNum() {
+		return objectNum;
+	}
+
+	public static void setObjectNum(int objectNum) {
+		Kotik.objectNum = objectNum;
+	}
+
 	//методы
-	private void liveAnotherDay() {
+	public void liveAnotherDay() {
 	for(int i =0;i<23;i++) {
-		int random = (int)Math.random()*5+1;
+		int random = (int)(Math.random()*5+1);
 		switch(random) {
 		case 1:play(); break;
 		case 2:sleep(); break;
@@ -82,61 +71,108 @@ public class Kotik {
 	}
 
 	}
-	public void play() {
+	public boolean play() {
 		if(hunger<0) {
-			System.out.println(name+"Hungry");
+			System.out.println(name+" Hungry");
 			eat();
+			return false;
 		}else {
-				System.out.println(name+"playing, don't scare him");
+				System.out.println(name+" playing, don't scare him");
 				hunger--;
+				return true;
 			}
 		}
 
-	public void sleep() {
+	public boolean sleep() {
 		if(hunger<0) {
-			System.out.println(name+"Hungry");
-			eat();
+			System.out.println(name+" Hungry");
+			eat(5,"meat");
+			return false;
 		}else {
-				System.out.println(name+"sleeping, bless good");
+				System.out.println(name+" sleeping, bless good");
 				hunger--;
+				return true;
 			}
 
 	}
-	public void angry() {
+	public boolean angry() {
 		if(hunger<0) {
-			System.out.println(name+"Hungry");
+			System.out.println(name+" Hungry");
 			eat();
+			return false;
 		}else {
-				System.out.println(name+"See, i feel fear");
+				System.out.println(name+" See, i feel fear");
 				hunger--;
+				return true;
 			}
 
 	}
-	public void callingSatan() {
+	public boolean callingSatan() {
 		if(hunger<0) {
-			System.out.println(name+"Hungry");
+			System.out.println(name+" Hungry");
 			eat();
+			return false;
 		}else {
-				System.out.println(name+"draws a pentagram");
+				System.out.println(name+" draws a pentagram");
 				hunger--;
+				return true;
 			}
 
 	}
-	public void chaseDemon() {
+	public boolean chaseDemon() {
 		if(hunger<0) {
-			System.out.println(name+"Hungry");
-			eat();
+			System.out.println(name+" Hungry");
+			eat(5);
+			return false;
+			
 		}else {
-				System.out.println(name+"expels the demon");
+				System.out.println(name+" expels the demon");
 				hunger--;
+				return true;
 			}
 
 	}
 	
-	public void eat() {
-		hunger+=10;
-		System.out.println(name+"not hungry anymore, dont be scared");
+	public boolean eat(int z) {
+		hunger+=z;
+		System.out.println(name+" Fed up "+z);
+		return true;
 
+	}
+	public boolean eat(int z, String food) {
+		hunger+=z;
+		food="fish";
+		System.out.println(name+" eat "+food+", fed up "+z);
+		return true;
+
+	}
+	public boolean eat() {
+		eat(10, "meat");
+		return true;
+	
+	}
+
+	//Construct
+	public Kotik(int prettiness, int weight, String name, String meow) {
+		super();
+		this.prettiness = prettiness;
+		this.weight = weight;
+		this.name = name;
+		this.meow = meow;
+		objectNum++;
+	}
+	public Kotik() {
+		name="Unk";
+		meow="Ssss";
+		objectNum++;
+	}
+	public boolean compareVoice(Kotik cat) {
+		if (meow.equalsIgnoreCase(cat.meow)){
+			System.out.println("meow equals");
+			return true;
+		} else {
+			return false;
+		}
 	}
 		
 }
