@@ -1,7 +1,7 @@
 package Model;
 
 public class Kotik {
-	int hunger;
+	int hunger=10;
 	int prettiness,weight;
 	String name, meow;
 	
@@ -21,65 +21,54 @@ public class Kotik {
 	}
 	private void play() {
 		if(hunger<0) {
-			System.out.println(name+"Голоден");
+			System.out.println(name+"Hungry");
 			eat();
 		}else {
-				System.out.println(name+"Хорошо что он играет");
+				System.out.println(name+"playing, don't scare him");
 			}
 		}
 
 	private void sleep() {
 		if(hunger<0) {
-			System.out.println(name+"Голоден");
+			System.out.println(name+"Hungry");
 			eat();
 		}else {
-				System.out.println(name+"Он спит, спокойно");
+				System.out.println(name+"sleeping, bless good");
 			}
 
 	}
 	private void angry() {
 		if(hunger<0) {
-			System.out.println(name+"Голоден");
+			System.out.println(name+"Hungry");
 			eat();
 		}else {
-				System.out.println(name+"Грозно смотрит, заставляет меня отворачиваться");
+				System.out.println(name+"See, i feel fear");
 			}
 
 	}
 	private void callingSatan() {
 		if(hunger<0) {
-			System.out.println(name+"Голоден");
+			System.out.println(name+"Hungry");
 			eat();
 		}else {
-				System.out.println(name+"Рисует пентаграмму");
+				System.out.println(name+"draws a pentagram");
 			}
 
 	}
 	private void chaseDemon() {
 		if(hunger<0) {
-			System.out.println(name+"Голоден");
+			System.out.println(name+"Hungry");
 			eat();
 		}else {
-				System.out.println(name+"Изгоняет демонов");
+				System.out.println(name+"expels the demon");
 			}
 
 	}
 	
 	private void eat() {
 		hunger+=10;
-		System.out.println(name+"больше не голоден, тебе ничто не угражает");
+		System.out.println(name+"not hungry anymore, dont be scared");
 
 	}
-	
-	
-	
-	//гетеры сетеры
-	
-	
-	
-	
-	
-	
-	
-	
+		
 }
