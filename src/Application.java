@@ -8,8 +8,10 @@ public class Application {
 		System.out.println("------  "+"Object add: "+Kotik.getObjectNum()+"  ------");
 		System.out.println("--- "+"Comparison meow:"+isCat1.compareVoice(isCat2)+" ---");
 		System.out.println(System.lineSeparator());
-		System.out.println("---- Action ----");
+		System.out.println("---- Action Object 1 ----");
 		isCat1.liveAnotherDay();
+		System.out.println(System.lineSeparator());
+		System.out.println("---- Action Object 2 ----");
 		isCat2.liveAnotherDay();
 	}
 }
