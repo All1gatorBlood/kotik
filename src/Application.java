@@ -1,4 +1,4 @@
-package src;
+
 import Model.Kotik;
 
 public class Application {
@@ -10,9 +10,6 @@ public class Application {
 		System.out.println("\n");
 		System.out.println("---- Action ----");
 		isCat1.liveAnotherDay();
-		
-
-		
 	}
 
 
