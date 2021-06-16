@@ -7,10 +7,9 @@ public class Application {
 		Kotik isCat2 = new Kotik();
 		System.out.println("------  "+"Object add: "+Kotik.getObjectNum()+"  ------");
 		System.out.println("--- "+"Comparison meow:"+isCat1.compareVoice(isCat2)+" ---");
-		System.out.println("\n");
+		System.out.println(System.lineSeparator());
 		System.out.println("---- Action ----");
 		isCat1.liveAnotherDay();
+		isCat2.liveAnotherDay();
 	}
-
-
 }
