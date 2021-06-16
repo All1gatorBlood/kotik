@@ -163,12 +163,11 @@ public class Kotik {
 	}
 	public Kotik() {
 		name="Unk";
-		meow="Ssss";
+		meow="RRR";
 		objectNum++;
 	}
 	public boolean compareVoice(Kotik cat) {
 		if (meow.equalsIgnoreCase(cat.meow)){
-			System.out.println("meow equals");
 			return true;
 		} else {
 			return false;
