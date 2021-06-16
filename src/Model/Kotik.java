@@ -71,6 +71,13 @@ public class Kotik {
 	}
 
 	}
+	public void setKotik() {
+		name="Unk";
+		prettiness=10;
+		weight=20;
+		meow="RRR";		
+		
+	}
 	public boolean play() {
 		if(hunger<0) {
 			System.out.println(name+" Hungry");
@@ -162,8 +169,7 @@ public class Kotik {
 		objectNum++;
 	}
 	public Kotik() {
-		name="Unk";
-		meow="RRR";
+		setKotik();
 		objectNum++;
 	}
 	public boolean compareVoice(Kotik cat) {
